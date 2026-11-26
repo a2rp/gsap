@@ -13,7 +13,7 @@ Callbacks let application code respond to animation lifecycle events. Common cal
 
 Pass a function in the vars object. `onStart` runs when playback begins, `onUpdate` runs on render updates, and completion callbacks run at their respective endpoints. A repeating tween can call `onRepeat`; an infinite tween will not naturally call `onComplete`. `onInterrupt` can be useful when a tween is killed or overwritten before completion. Keep callbacks small because they may run during animation rendering.
 
-``js
+```js
 const state = { value: 0 };
 
 gsap.to(state, {
@@ -23,7 +23,7 @@ gsap.to(state, {
   onUpdate: () => renderValue(state.value),
   onComplete: () => console.log("completed"),
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
