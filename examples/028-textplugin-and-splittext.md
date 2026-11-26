@@ -29,7 +29,8 @@ Keep the development server running. Put the markup in index.html, the styles in
     <title>TextPlugin and SplitText demo</title>
   </head>
   <body>
-<p class="status" data-status aria-live="polite">Loading</p>
+<p class="status" data-status aria-hidden="true">Loading</p>
+<p class="visually-hidden">Ready to begin</p>
 <h1 class="headline" data-heading>Motion with meaning</h1>
 <button type="button" data-replay>Replay heading</button>
     <script type="module" src="/src/main.js"></script>
@@ -43,8 +44,16 @@ Keep the development server running. Put the markup in index.html, the styles in
 .headline { overflow: hidden; }
 .headline .word { display: inline-block; }
 .status { min-height: 1.5em; }
-@media (prefers-reduced-motion: reduce) {
-  .headline, .status { scroll-behavior: auto; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 ```
 
@@ -101,7 +110,7 @@ function cleanupTextMotion() {
 
 ## Expected result
 
-The status text changes word by word. The heading words appear in a short stagger, and Replay restarts the effect without stacking wrappers. Calling cleanupTextMotion restores the original heading markup and removes the event listener.
+The visible status changes word by word while its complete equivalent remains available to assistive technology. The heading words appear in a short stagger, and Replay restarts the effect without stacking wrappers. Calling cleanupTextMotion restores the original heading markup and removes the event listener.
 
 ## Practice variation
 
