@@ -13,13 +13,13 @@ The optional final position argument on timeline methods decides where a child i
 
 A number is an absolute time from the start of the timeline. A label names a time. `"<"` points to the start of the previous child animation and `">"` to its end. A string such as `"-=0.2"` or `"+=0.4"` offsets from the current end of the timeline. Label-relative positions such as `"intro+=0.2"` place a child relative to a named point.
 
-``js
+```js
 const tl = gsap.timeline({ paused: true });
 
 tl.to(".one", { x: 120, duration: 1 }, 0)
   .to(".two", { x: 120, duration: 0.7 }, "<")
   .to(".three", { x: 120, duration: 0.5 }, "-=0.2");
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
