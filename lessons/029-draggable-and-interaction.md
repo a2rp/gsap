@@ -12,7 +12,7 @@ Draggable turns an element into a pointer and touch interaction that can control
 
 Register Draggable, then create an instance with Draggable.create(target, vars). Use type to constrain the affected transform, bounds to constrain movement, and snap or liveSnap for release-time or during-drag snapping. onPress, onDragStart, onDrag, and onDragEnd describe the interaction lifecycle. Use `allowNativeTouchScrolling` and CSS touch-action thoughtfully so a horizontal drag does not block vertical page scrolling. Inertia-based momentum needs InertiaPlugin. Keep a keyboard-operable native control or implement keyboard behavior that updates the same state.
 
-``js
+```js
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 
@@ -41,7 +41,7 @@ if (track && thumb && valueInput) {
     draggable.update();
   });
 }
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
