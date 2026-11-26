@@ -8,19 +8,19 @@ Create a small hero sequence whose child tweens can be played and reversed toget
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,22 +39,22 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 :root { font-family: system-ui, sans-serif; color: #172033; background: #eef2f8; }
 body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
 .demo { width: min(40rem, calc(100% - 2rem)); padding: 2.5rem; background: white; border-radius: 1rem; }
 .eyebrow { color: #635bdb; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .title { max-width: 14ch; font-size: clamp(2rem, 7vw, 3.5rem); line-height: 1.05; }
 button { margin-right: .5rem; padding: .65rem 1rem; cursor: pointer; }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 
@@ -71,7 +71,7 @@ intro
 
 document.querySelector("#play").addEventListener("click", () => intro.play());
 document.querySelector("#reverse").addEventListener("click", () => intro.reverse());
-``
+```
 
 ## Expected result
 
