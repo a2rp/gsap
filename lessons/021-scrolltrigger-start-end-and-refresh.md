@@ -13,7 +13,7 @@ A ScrollTrigger's `start` and `end` define the scroll positions where it becomes
 
 Start and end are measured when a trigger is created and when ScrollTrigger refreshes. They are not continuously remeasured while scrolling. A number specifies an absolute scroll value; a function can return a value at refresh time. `ScrollTrigger.refresh()` forces recalculation after a layout change. `update()` checks the current scroll position against the existing measurements but does not recalculate those positions. `clamp()` wrapping is available in GSAP 3.12 and newer to keep calculated positions within scroll bounds.
 
-``js
+```js
 const section = document.querySelector(".feature");
 
 gsap.to(".feature__box", {
@@ -27,7 +27,7 @@ gsap.to(".feature__box", {
     markers: true,
   },
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
