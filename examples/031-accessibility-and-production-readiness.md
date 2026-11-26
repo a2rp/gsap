@@ -47,9 +47,6 @@ Keep the development server running. Put the markup in index.html, the styles in
 
 ```css
 .feature-card { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; }
-}
 ```
 
 ## Animation: src/main.js
