@@ -13,7 +13,7 @@ GSAP works in React without a wrapper, but component lifecycles require scoped s
 
 Install both `gsap` and `@gsap/react`, import the hook, and register it with `gsap.registerPlugin(useGSAP)`. Pass a ref as `scope` so selector text only targets descendants of that component. `useGSAP()` defaults to running once, similar to an effect with an empty dependency array. For values that change, pass `dependencies`; use `revertOnUpdate: true` if animations should be reverted and rebuilt whenever those dependencies change. Wrap event handlers that create animations later with `contextSafe()` and remove their listeners during cleanup.
 
-``js
+```js
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -29,7 +29,7 @@ function Hero() {
 
   return <section ref={container}><h1 className="title">Welcome</h1></section>;
 }
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
