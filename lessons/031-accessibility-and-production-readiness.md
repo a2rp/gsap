@@ -12,7 +12,7 @@ Animation is part of an interface, so it must not hide essential information or 
 
 Use gsap.matchMedia() to create separate motion behavior for reduced and non-reduced preferences. Animations created inside a matching handler are recorded and reverted when the condition changes or the match media context is reverted. Keep controls as native links and buttons where possible. Avoid autoplaying essential announcements, provide pause/stop controls for persistent motion, preserve focus and reading order, and ensure animation does not create keyboard traps. Clean up event listeners, custom ticker callbacks, Draggable instances, split text, and context-owned animations when a view is removed. Remove markers and diagnostics before production.
 
-``js
+```js
 import { gsap } from "gsap";
 
 const root = document.querySelector("[data-feature]");
@@ -38,7 +38,7 @@ motion.add(
 // When the owning view is disposed:
 // playButton?.removeEventListener("click", onPlay);
 // motion.revert();
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
