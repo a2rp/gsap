@@ -20,6 +20,10 @@ Scoping keeps the animation setup limited to the current view and avoids acciden
 
 Each trigger is tied to the card whose visibility matters, which makes the start condition direct and easier to tune.
 
+## How are animations created by later event callbacks included in a match-media context?
+
+Wrap the callback with context.add() and remove the event listener in the returned cleanup function. This lets the context revert the callback's GSAP animations as well.
+
 ## What must be cleaned up when a client-side view is removed?
 
 Revert the match-media context and remove event listeners or other resources owned by the view.
