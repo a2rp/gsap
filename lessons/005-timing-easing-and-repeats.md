@@ -13,7 +13,7 @@ Tween timing options control when a tween starts, how long one iteration lasts, 
 
 `repeat: 2` produces three iterations total. `repeatDelay` adds a pause between iterations but not after the final iteration. With `yoyo: true`, each repeated iteration reverses direction. An ease maps normalized progress onto a curve; it does not change the tween's endpoint. An infinite repeat (`-1`) has no natural completion and therefore does not reach `onComplete` unless stopped or altered.
 
-``js
+```js
 gsap.to(".dot", {
   x: 220,
   duration: 0.8,
@@ -23,7 +23,7 @@ gsap.to(".dot", {
   repeatDelay: 0.25,
   yoyo: true,
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
