@@ -8,19 +8,19 @@ Tie a scrubbed box movement to the measured height of its section and inspect st
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -37,11 +37,11 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 :root { font-family: system-ui, sans-serif; color: #172033; background: #eef2f8; }
 body { margin: 0; }
 .page { min-height: 100vh; }
@@ -49,11 +49,11 @@ body { margin: 0; }
 .feature { min-height: 65vh; background: #e9e7ff; }
 .feature__box { width: 8rem; padding: 1rem; border-radius: .8rem; color: white; background: #635bdb; }
 .outro { margin-bottom: 0; }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -73,7 +73,7 @@ gsap.to(".feature__box", {
     markers: true,
   },
 });
-``
+```
 
 ## Expected result
 
