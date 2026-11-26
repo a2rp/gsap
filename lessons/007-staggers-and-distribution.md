@@ -13,7 +13,7 @@ A stagger adds a start-time offset between targets in a single tween. A numeric 
 
 GSAP resolves the target collection, assigns each target a position in the stagger sequence, and schedules the same tween configuration at different offsets. `each` specifies the interval per target; `amount` spreads the sequence across an overall duration. `from` changes the origin of the distribution, and `grid` allows a two-dimensional layout to be treated as a grid.
 
-``js
+```js
 gsap.from(".tile", {
   y: 24,
   autoAlpha: 0,
@@ -26,7 +26,7 @@ gsap.from(".tile", {
     axis: "x",
   },
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
