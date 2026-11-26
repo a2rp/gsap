@@ -13,13 +13,13 @@ For modern projects, install the `gsap` package with the package manager already
 
 The starter below uses Vite to serve an ES module entry file and resolve the `gsap` dependency. The same import style is used by common bundlers. A plugin is a separate import and should be registered with `gsap.registerPlugin()` so bundlers retain it. GSAP 3.13 and newer publish the plugins on npm; older private-registry instructions can be stale.
 
-``js
+```js
 import { gsap } from "gsap";
 
 const box = document.querySelector(".box");
 
 gsap.to(box, { x: 100, duration: 0.6 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
