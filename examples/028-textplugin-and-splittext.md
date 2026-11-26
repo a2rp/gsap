@@ -8,19 +8,19 @@ Replace a short status label word by word and animate a heading by word while pr
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,22 +35,22 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 .headline { overflow: hidden; }
 .headline .word { display: inline-block; }
 .status { min-height: 1.5em; }
 @media (prefers-reduced-motion: reduce) {
   .headline, .status { scroll-behavior: auto; }
 }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -97,7 +97,7 @@ function cleanupTextMotion() {
   reveal?.kill();
   split?.revert();
 }
-``
+```
 
 ## Expected result
 
