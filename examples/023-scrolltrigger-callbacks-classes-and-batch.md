@@ -8,19 +8,19 @@ Reveal list items in batches as they enter and toggle a class on a related secti
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,11 +39,11 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 :root { font-family: system-ui, sans-serif; color: #172033; background: #eef2f8; }
 body { margin: 0; }
 .intro, .feature, .outro { width: min(42rem, calc(100% - 2rem)); margin: 12vh auto; padding: 2rem; background: white; border-radius: 1rem; }
@@ -53,11 +53,11 @@ body { margin: 0; }
 .items { display: grid; gap: 1rem; margin-top: 2rem; }
 .item { padding: 1.2rem; border-radius: .8rem; background: #e9e7ff; }
 .outro { min-height: 60vh; }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -85,7 +85,7 @@ ScrollTrigger.create({
   end: "bottom center",
   toggleClass: { targets: ".feature__label", className: "is-active" },
 });
-``
+```
 
 ## Expected result
 
