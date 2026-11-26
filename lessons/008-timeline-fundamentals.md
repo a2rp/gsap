@@ -13,7 +13,7 @@ A timeline is a sequencing container for tweens, callbacks, and nested timelines
 
 `gsap.timeline()` returns a Timeline instance. Its `.to()`, `.from()`, and `.fromTo()` methods add child tweens and return the timeline, which enables chaining. Timeline `defaults` are inherited by child tweens unless a child overrides them. A parent playhead controls the position of its children, so the whole sequence can be paused, reversed, repeated, or scrubbed as one unit.
 
-``js
+```js
 const intro = gsap.timeline({
   defaults: { duration: 0.45, ease: "power2.out" },
   paused: true,
@@ -25,7 +25,7 @@ intro
   .from(".action", { scale: 0.9, autoAlpha: 0 });
 
 intro.play();
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
