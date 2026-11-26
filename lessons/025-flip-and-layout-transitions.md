@@ -13,7 +13,7 @@ Flip animates visual transitions between two layout states. It follows the First
 
 Import and register `Flip`. Call `Flip.getState(targets)` before changing classes, DOM structure, or layout. Apply the state change synchronously, then pass the captured state to `Flip.from(state, vars)`. `Flip.from()` compares the recorded geometry with the current layout, temporarily applies inverse transforms, and animates those offsets away. It returns a timeline that can be controlled or extended.
 
-``js
+```js
 const state = Flip.getState(".tile");
 grid.classList.toggle("is-expanded");
 
@@ -23,7 +23,7 @@ Flip.from(state, {
   absolute: true,
   stagger: 0.04,
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
