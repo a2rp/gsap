@@ -13,7 +13,7 @@ For DOM targets, GSAP's CSSPlugin animates supported CSS properties. Transform a
 
 GSAP parses and caches transform components so independent transform values can be composed efficiently. CSS values may include numbers, units, colors, and supported strings. `autoAlpha` combines opacity with visibility for show/hide transitions. `transformOrigin` defines the point around which rotation and scale occur. `clearProps` can remove inline properties when a tween completes.
 
-``js
+```js
 gsap.to(".card", {
   x: 40,
   y: -12,
@@ -23,7 +23,7 @@ gsap.to(".card", {
   duration: 0.5,
   ease: "power2.out",
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
