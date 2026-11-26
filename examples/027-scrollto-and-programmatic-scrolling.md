@@ -8,19 +8,19 @@ Build a small in-page contents list that smoothly moves to a target section whil
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -44,20 +44,20 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 html { scroll-behavior: auto; }
 .site-header { position: sticky; top: 0; }
 section { min-height: 70vh; scroll-margin-top: 1rem; }
 .contents { display: flex; gap: 1rem; }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -86,7 +86,7 @@ document.querySelectorAll("[data-scroll-link]").forEach((link) => {
     history.replaceState(null, "", href);
   });
 });
-``
+```
 
 ## Expected result
 
