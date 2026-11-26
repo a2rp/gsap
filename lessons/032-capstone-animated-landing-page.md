@@ -12,7 +12,7 @@ A polished animated page is a collection of small, purposeful motion decisions. 
 
 Use an ES module and register every imported plugin once. Build a short hero timeline for related elements. Give each feature card its own ScrollTrigger so its geometry remains local and understandable. Use ScrollToPlugin only for animated navigation, leaving native anchors available when reduced motion is requested. Scope selectors to the page root. Use gsap.matchMedia() to create the motion path and return cleanup for native event listeners. Keep visible CSS defaults so content is readable before JavaScript runs.
 
-``js
+```js
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -79,7 +79,7 @@ motion?.add(
 
 // Call when this page view is disposed:
 // motion?.revert();
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
