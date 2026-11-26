@@ -13,7 +13,7 @@ Keyframes define multiple property states inside one tween. Modifiers transform 
 
 A `keyframes` array contains successive sets of vars; each may define its own duration. The parent tween can supply common options. A `modifiers` function receives a value and returns the value GSAP should apply, which can wrap, clamp, or quantize it. `snap` is a convenient way to round selected properties or values to configured increments.
 
-``js
+```js
 gsap.to(".box", {
   keyframes: [
     { x: 100, duration: 0.6 },
@@ -25,7 +25,7 @@ gsap.to(".box", {
     x: gsap.utils.snap(10),
   },
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
