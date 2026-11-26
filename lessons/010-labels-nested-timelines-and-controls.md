@@ -13,7 +13,7 @@ Labels give names to positions in a timeline. Nested timelines let you package a
 
 Use `addLabel(name, position)` to create a named point. Pass the label to a timeline method or use `seek(label)` to move to it. A child timeline can be built independently, then added with `parent.add(child, position)`. The parent controls the child playhead. Methods such as `play()`, `pause()`, `reverse()`, `restart()`, `seek()`, `progress()`, and `timeScale()` control playback.
 
-``js
+```js
 const detailSequence = gsap.timeline();
 detailSequence
   .from(".detail", { y: 16, autoAlpha: 0, stagger: 0.1 });
@@ -24,7 +24,7 @@ page.addLabel("intro")
   .addLabel("details", "+=0.2")
   .add(detailSequence, "details")
   .addLabel("complete");
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
