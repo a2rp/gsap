@@ -13,7 +13,7 @@
 
 The target can be a selector, element, array of elements, or supported JavaScript object. The vars object combines destination properties with special settings such as `duration`, `ease`, `delay`, `onComplete`, and `paused`. For DOM targets, GSAP normalizes CSS transforms such as `x` and `rotation`. When you need to replay or reverse the tween later, keep its return value.
 
-``js
+```js
 const tween = gsap.to(".box", {
   x: 160,
   opacity: 0.5,
@@ -23,7 +23,7 @@ const tween = gsap.to(".box", {
 });
 
 tween.play();
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
