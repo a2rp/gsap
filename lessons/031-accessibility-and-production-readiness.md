@@ -10,7 +10,7 @@ Animation is part of an interface, so it must not hide essential information or 
 
 ## How it works
 
-Use gsap.matchMedia() to create separate motion behavior for reduced and non-reduced preferences. Animations created inside a matching handler are recorded and reverted when the condition changes or the match media context is reverted. Keep controls as native links and buttons where possible. Avoid autoplaying essential announcements, provide pause/stop controls for persistent motion, preserve focus and reading order, and ensure animation does not create keyboard traps. Clean up event listeners, custom ticker callbacks, Draggable instances, split text, and context-owned animations when a view is removed. Remove markers and diagnostics before production.
+Use gsap.matchMedia() to create separate motion behavior for reduced and non-reduced preferences. Animations created inside a matching handler are recorded and reverted when the condition changes or the match media context is reverted. For event handlers that run later, wrap their GSAP work with context.add() so those animations belong to the same context. Keep controls as native links and buttons where possible. Avoid autoplaying essential announcements, provide pause/stop controls for persistent motion, preserve focus and reading order, and ensure animation does not create keyboard traps. Clean up event listeners, custom ticker callbacks, Draggable instances, split text, and context-owned animations when a view is removed. Remove markers and diagnostics before production.
 
 ```js
 import { gsap } from "gsap";
