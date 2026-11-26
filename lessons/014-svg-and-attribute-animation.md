@@ -13,7 +13,7 @@ GSAP can animate SVG through CSSPlugin and the internal AttrPlugin. Attributes s
 
 Put SVG attributes inside `attr: { ... }` when you want to change the actual attribute value. Numeric attributes interpolate between their current and destination numbers. CSS-related properties belong outside `attr`; for example, `x` outside `attr` applies a transform, while `x` inside `attr` changes an SVG geometry coordinate where supported. AttrPlugin is included in GSAP core and does not need separate registration.
 
-``js
+```js
 const circle = document.querySelector("#orb");
 
 gsap.to(circle, {
@@ -23,7 +23,7 @@ gsap.to(circle, {
 });
 
 gsap.to(circle, { rotation: 180, transformOrigin: "center center", duration: 1 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
