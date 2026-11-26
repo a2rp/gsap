@@ -10,7 +10,7 @@ A polished animated page is a collection of small, purposeful motion decisions. 
 
 ## How it works
 
-Use an ES module and register every imported plugin once. Build a short hero timeline for related elements. Give each feature card its own ScrollTrigger so its geometry remains local and understandable. Use ScrollToPlugin only for animated navigation, leaving native anchors available when reduced motion is requested. Scope selectors to the page root. Use gsap.matchMedia() to create the motion path and return cleanup for native event listeners. Keep visible CSS defaults so content is readable before JavaScript runs.
+Use an ES module and register every imported plugin once. Build a short hero timeline for related elements. Give each feature card its own ScrollTrigger so its geometry remains local and understandable. Use ScrollToPlugin only for animated navigation, leaving native anchors available when reduced motion is requested. Scope selectors to the page root. Use gsap.matchMedia() to create the motion path and return cleanup for native event listeners. Wrap later event callbacks that create GSAP animations with context.add() so their animations are collected as well. Keep visible CSS defaults so content is readable before JavaScript runs.
 
 ```js
 import { gsap } from "gsap";
@@ -28,7 +28,7 @@ motion?.add(
     reduceMotion: "(prefers-reduced-motion: reduce)",
     fullMotion: "(prefers-reduced-motion: no-preference)"
   },
-  ({ conditions }) => {
+  ({ conditions, context }) => {
     if (!page) return;
 
     if (conditions.fullMotion) {
@@ -51,7 +51,7 @@ motion?.add(
       });
     }
 
-    const onNavigate = (event) => {
+    context.add("onNavigate", (event) => {
       const link = event.currentTarget;
       const href = link.getAttribute("href");
       const destination = href ? page.querySelector(href) : null;
@@ -69,7 +69,8 @@ motion?.add(
         onComplete: () => destination.focus({ preventScroll: true })
       });
       history.pushState(null, "", href);
-    };
+    });
+    const onNavigate = context.onNavigate;
 
     const links = page.querySelectorAll('a[href^="#"]');
     links.forEach((link) => link.addEventListener("click", onNavigate));
