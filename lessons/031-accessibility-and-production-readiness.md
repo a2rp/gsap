@@ -16,7 +16,6 @@ Use gsap.matchMedia() to create separate motion behavior for reduced and non-red
 import { gsap } from "gsap";
 
 const root = document.querySelector("[data-feature]");
-const playButton = root?.querySelector("[data-play]");
 const panel = root?.querySelector("[data-panel]");
 
 const motion = gsap.matchMedia(root);
@@ -36,7 +35,6 @@ motion.add(
 );
 
 // When the owning view is disposed:
-// playButton?.removeEventListener("click", onPlay);
 // motion.revert();
 ```
 
