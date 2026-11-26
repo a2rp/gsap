@@ -13,7 +13,7 @@ Observer normalizes input events into callbacks such as `onUp`, `onDown`, `onDra
 
 Import and register `Observer`, then call `Observer.create()` with a target, event `type`, and callbacks. Observer accumulates movement deltas and debounces them by default for frame-synchronized processing. `tolerance` sets a minimum movement threshold, while `dragMinimum` filters tiny initial pointer/touch movement before treating it as a drag. The Observer instance can be disabled, enabled, or killed.
 
-``js
+```js
 const observer = Observer.create({
   target: ".gesture-area",
   type: "wheel,touch,pointer",
@@ -24,7 +24,7 @@ const observer = Observer.create({
 
 // When the owning area is removed:
 observer.kill();
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
