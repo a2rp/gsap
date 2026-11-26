@@ -12,7 +12,7 @@ TextPlugin tween-replaces an element's text content over time. SplitText divides
 
 Register each plugin used by the page. TextPlugin accepts a string or an object with value and options such as delimiter; the default progression is character-based and a space delimiter can reveal words. SplitText.create() returns a SplitText instance with arrays such as chars, words, and lines. Create the split after the intended font is available, animate only the needed units, and call revert() during teardown. Text layout can change with width and font loading, so responsive splitting must be rebuilt or use supported autoSplit behavior. Keep the original full text in the DOM's accessible reading flow and avoid exposing a confusing sequence of decorative character nodes to assistive technology.
 
-``js
+```js
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { SplitText } from "gsap/SplitText";
@@ -42,7 +42,7 @@ if (heading) {
 
   // When this view is removed, revert the split and its generated wrappers.
   // split.revert();
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
