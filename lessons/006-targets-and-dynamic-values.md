@@ -13,7 +13,7 @@ GSAP accepts selector text, a DOM element, arrays, NodeLists, and supported Java
 
 Selector strings are resolved to matching elements when the tween initializes. Function-based values are evaluated for each target on the first render, which lets a set of elements share one tween configuration while receiving different destinations. Relative strings such as `"+=24"` offset a current value. Random strings and `gsap.utils.random()` are useful for varied effects, but random output should not replace meaningful design.
 
-``js
+```js
 const items = gsap.utils.toArray(".item");
 
 gsap.to(items, {
@@ -22,7 +22,7 @@ gsap.to(items, {
   duration: 0.6,
   ease: "power2.out",
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
