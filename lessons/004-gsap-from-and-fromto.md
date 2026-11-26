@@ -13,7 +13,7 @@
 
 A `from()` tween is conceptually a `to()` tween with the playhead moving from an explicitly supplied state toward the state GSAP reads from the target. This makes it convenient for entrances. `from()` and `fromTo()` commonly render their starting values immediately. In timelines, that can make an element appear hidden before its scheduled position; `immediateRender: false` can defer that initial write when appropriate.
 
-``js
+```js
 gsap.from(".card", {
   y: 24,
   autoAlpha: 0,
@@ -25,7 +25,7 @@ gsap.fromTo(".notice",
   { scale: 0.9, autoAlpha: 0 },
   { scale: 1, autoAlpha: 1, duration: 0.35, ease: "back.out(1.4)" }
 );
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
