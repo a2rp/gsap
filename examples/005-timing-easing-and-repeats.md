@@ -8,19 +8,19 @@ Compare repeat timing, yoyo direction, and easing with one visible dot and a rep
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -38,22 +38,22 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 :root { font-family: system-ui, sans-serif; color: #172033; background: #eef2f8; }
 body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
 .demo { width: min(42rem, calc(100% - 2rem)); padding: 2rem; background: white; border-radius: 1rem; }
 .track { height: 4rem; padding: .5rem; background: #e7e9f2; border-radius: 999px; }
 .dot { width: 3rem; height: 3rem; border-radius: 50%; background: #635bdb; }
 button { margin-top: 1rem; padding: .6rem 1rem; cursor: pointer; }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 
@@ -68,7 +68,7 @@ const tween = gsap.to(".dot", {
 });
 
 document.querySelector("#replay").addEventListener("click", () => tween.restart());
-``
+```
 
 ## Expected result
 
