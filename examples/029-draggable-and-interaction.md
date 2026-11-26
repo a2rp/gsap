@@ -8,19 +8,19 @@ Create a horizontal percentage control whose draggable visual thumb is synchroni
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -38,20 +38,20 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 .track { position: relative; height: 2rem; border-radius: 1rem; background: #d9e2f2; touch-action: pan-y; }
 .thumb { position: absolute; top: 0; left: 0; width: 2rem; height: 2rem; border-radius: 50%; background: #315ee8; cursor: grab; }
 .thumb:active { cursor: grabbing; }
 input[type="range"] { width: 100%; }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
@@ -101,7 +101,7 @@ if (track && thumb && input && output) {
     draggable.kill();
   }
 }
-``
+```
 
 ## Expected result
 
