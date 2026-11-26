@@ -104,7 +104,7 @@ if (page) {
       reduceMotion: "(prefers-reduced-motion: reduce)",
       fullMotion: "(prefers-reduced-motion: no-preference)"
     },
-    ({ conditions }) => {
+    ({ conditions, context }) => {
       if (conditions.fullMotion) {
         gsap.from(page.querySelectorAll("[data-hero-item]"), {
           y: 20,
@@ -125,7 +125,7 @@ if (page) {
         });
       }
 
-      const navigate = (event) => {
+      context.add("navigate", (event) => {
         const link = event.currentTarget;
         const href = link.getAttribute("href");
         const target = href ? page.querySelector(href) : null;
@@ -143,11 +143,12 @@ if (page) {
           onComplete: () => target.focus({ preventScroll: true })
         });
         history.pushState(null, "", href);
-      };
+      });
+      const onNavigate = context.navigate;
 
       const links = page.querySelectorAll('a[href^="#"]');
-      links.forEach((link) => link.addEventListener("click", navigate));
-      return () => links.forEach((link) => link.removeEventListener("click", navigate));
+      links.forEach((link) => link.addEventListener("click", onNavigate));
+      return () => links.forEach((link) => link.removeEventListener("click", onNavigate));
     }
   );
 
