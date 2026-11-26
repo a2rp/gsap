@@ -13,7 +13,7 @@ A GSAP context groups animations and ScrollTriggers created while its callback r
 
 Create a context around the animation setup and retain the returned context. When the component or interface is torn down, call `ctx.revert()`. A context also supports adding named functions that create animations later; those callbacks can be run through the context so their animations are collected. In React, `@gsap/react` provides `useGSAP()` and `contextSafe()` patterns, covered in the next React lesson.
 
-``js
+```js
 const ctx = gsap.context(() => {
   gsap.from(".box", {
     y: 20,
@@ -25,7 +25,7 @@ const ctx = gsap.context(() => {
 
 // When the stage is removed or reset:
 ctx.revert();
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
