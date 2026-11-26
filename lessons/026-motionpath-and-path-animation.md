@@ -13,7 +13,7 @@ MotionPathPlugin animates a target along an SVG path, raw SVG path data, or an a
 
 Import and register MotionPathPlugin. Pass a path to `motionPath`, optionally using `align` and `alignOrigin` to map the path's coordinate system to the target. `autoRotate: true` turns the target along the tangent of the path. `start` and `end` select progress positions along the path. Path alignment calculations happen when the tween initializes.
 
-``js
+```js
 gsap.to(".ship", {
   duration: 3,
   ease: "power1.inOut",
@@ -24,7 +24,7 @@ gsap.to(".ship", {
     autoRotate: true,
   },
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
