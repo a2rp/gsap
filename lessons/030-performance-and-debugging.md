@@ -12,7 +12,7 @@ Smooth animation depends on the browser doing little work per frame. Start by id
 
 Use ScrollTrigger markers during development to see calculated start and end positions. Call refresh after a layout change that affects trigger geometry; refresh recalculates positions, while update checks the current scroll position. Inspect active tweens with gsap.getTweensOf() and triggers with ScrollTrigger.getAll(). Avoid repeated DOM measurements or layout writes inside frame callbacks. If you add a custom gsap.ticker listener, remove it when no longer needed. Measure with browser performance tools before adding will-change or forcing layers.
 
-``js
+```js
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -37,7 +37,7 @@ if (card) {
 
 // After inserting content above existing triggers:
 requestAnimationFrame(() => ScrollTrigger.refresh());
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
