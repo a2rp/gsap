@@ -8,19 +8,19 @@ Assemble a complete small landing page with semantic in-page links, a reduced-mo
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -63,11 +63,11 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 * { box-sizing: border-box; }
 html { scroll-behavior: auto; }
 body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.5; }
@@ -81,11 +81,11 @@ body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.5; }
 .button { justify-self: start; padding: 0.75rem 1rem; background: #315ee8; color: white; border-radius: 0.5rem; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
 @media (max-width: 38rem) { .site-header { align-items: flex-start; flex-direction: column; } .site-header nav { flex-wrap: wrap; } }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -156,7 +156,7 @@ if (page) {
     motion.revert();
   }
 }
-``
+```
 
 ## Expected result
 
