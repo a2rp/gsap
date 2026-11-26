@@ -13,14 +13,14 @@
 
 `gsap.set(target, vars)` is effectively a zero-duration tween with a clear API name. `gsap.delayedCall(delay, callback)` returns a tween-like animation that can be controlled or killed. `gsap.quickTo(target, property, vars)` returns a function; call it with new values to retarget the same tween. `gsap.quickSetter(target, property, unit)` returns a function that writes a value directly, with no smoothing tween.
 
-``js
+```js
 gsap.set(".dot", { x: 0, y: 0, scale: 0.8 });
 
 const moveX = gsap.quickTo(".dot", "x", { duration: 0.25, ease: "power3.out" });
 const moveY = gsap.quickTo(".dot", "y", { duration: 0.25, ease: "power3.out" });
 
 gsap.delayedCall(1, () => console.log("One second elapsed"));
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
