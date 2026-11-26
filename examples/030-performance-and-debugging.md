@@ -45,7 +45,7 @@ Keep the development server running. Put the markup in index.html, the styles in
 ```css
 .spacer { height: 20vh; }
 .scene { min-height: 80vh; display: grid; place-items: center; }
-.card { opacity: 0; transform: translateX(0); padding: 2rem; background: #24365b; border-radius: 1rem; }
+.card { opacity: 1; transform: none; padding: 2rem; background: #24365b; border-radius: 1rem; }
 ```
 
 ## Animation: src/main.js
@@ -82,15 +82,17 @@ if (scene && card) {
   });
 }
 
-addContent?.addEventListener("click", () => {
+const onAddContent = () => {
   const note = document.createElement("p");
   note.textContent = "New content changes the layout above the scene.";
   document.querySelector(".spacer")?.before(note);
   requestAnimationFrame(() => ScrollTrigger.refresh());
-});
+};
+addContent?.addEventListener("click", onAddContent);
 
 // Call from the view's teardown hook.
 function cleanupDiagnostics() {
+  addContent?.removeEventListener("click", onAddContent);
   tween?.scrollTrigger?.kill();
   tween?.kill();
 }
@@ -98,7 +100,7 @@ function cleanupDiagnostics() {
 
 ## Expected result
 
-Markers show the scene's current calculated start and end positions. Clicking the button changes document layout and then refreshes ScrollTrigger once. Diagnostics display the new positions. Cleanup kills the scene tween and its trigger when the view is removed.
+Markers show the scene's current calculated start and end positions. Clicking the button changes document layout and then refreshes ScrollTrigger once. Diagnostics display the new positions. Cleanup removes the button listener and kills the scene tween and its trigger when the view is removed.
 
 ## Practice variation
 
