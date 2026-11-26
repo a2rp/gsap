@@ -13,7 +13,7 @@
 
 Create a matchMedia instance and call `.add()` with a query or conditions object. The callback receives a context with the matching conditions. Use those booleans to choose an appropriate animation setup. A `prefers-reduced-motion: reduce` condition should skip or substantially reduce nonessential motion while keeping the interface's content and state understandable.
 
-``js
+```js
 const mm = gsap.matchMedia();
 
 mm.add({
@@ -32,7 +32,7 @@ mm.add({
     stagger: 0.1,
   });
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
