@@ -13,7 +13,7 @@ ScrollTrigger connects a tween or timeline to the browser's scroll position. It 
 
 Import ScrollTrigger from the GSAP package and register it. Add a `scrollTrigger` configuration to a tween or timeline with a `trigger` element. At setup and refresh time, ScrollTrigger calculates start and end scroll positions based on normal document flow. It synchronizes updates with GSAP's rendering loop rather than continuously measuring every element.
 
-``js
+```js
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -28,7 +28,7 @@ gsap.from(".feature", {
     markers: true,
   },
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
