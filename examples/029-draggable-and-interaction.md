@@ -82,10 +82,11 @@ if (track && thumb && input && output) {
     }
   })[0];
 
-  input.addEventListener("input", () => {
+  const onInput = () => {
     setFromInput();
     draggable.update();
-  });
+  };
+  input.addEventListener("input", onInput);
 
   const resizeObserver = new ResizeObserver(() => {
     setFromInput();
@@ -97,7 +98,7 @@ if (track && thumb && input && output) {
   // Call from the view's teardown hook.
   function cleanupDragger() {
     resizeObserver.disconnect();
-    input.removeEventListener("input", setFromInput);
+    input.removeEventListener("input", onInput);
     draggable.kill();
   }
 }
