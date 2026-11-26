@@ -13,7 +13,7 @@ GSAP utilities perform common value transformations such as clamping, mapping, s
 
 For example, `gsap.utils.clamp(0, 100)` returns a function that constrains later inputs, and `gsap.utils.mapRange(0, 100, 0, 500)` returns a range mapper. `gsap.utils.pipe()` composes functions from left to right. A registered effect receives targets and a configuration object and should return a tween or timeline. With `extendTimeline: true`, the named effect can be added through a timeline method.
 
-``js
+```js
 const pointerToX = gsap.utils.pipe(
   gsap.utils.clamp(0, 100),
   gsap.utils.mapRange(0, 100, 0, 320),
@@ -33,7 +33,7 @@ gsap.registerEffect({
     stagger: config.stagger,
   }),
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
