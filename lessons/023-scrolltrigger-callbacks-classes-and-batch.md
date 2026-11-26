@@ -13,7 +13,7 @@ ScrollTrigger callbacks report when the scroll position crosses trigger boundari
 
 Callbacks such as `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, and `onUpdate` receive the ScrollTrigger instance. Use its `trigger`, `progress`, `direction`, and other properties. `toggleClass` can apply a class to the trigger or to other targets. `batch()` groups nearby enter/leave callbacks and passes an array of elements to the callback, which can then be animated together with a stagger.
 
-``js
+```js
 ScrollTrigger.batch(".item", {
   start: "top 85%",
   onEnter: (elements) => gsap.to(elements, {
@@ -31,7 +31,7 @@ ScrollTrigger.create({
   end: "bottom center",
   toggleClass: { targets: ".feature__label", className: "is-active" },
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
