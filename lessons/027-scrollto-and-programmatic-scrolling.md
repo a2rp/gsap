@@ -12,7 +12,7 @@ ScrollToPlugin animates a target's scroll position. Use it for deliberate naviga
 
 Register ScrollToPlugin before using the scrollTo property. Target window for document scrolling or a specific overflow container for nested scrolling. A destination may be a number or an element selector/reference. Object form accepts x, y, offsetX, offsetY, and autoKill. Offset values account for fixed headers. Auto-kill lets the plugin stop controlling an axis when it detects that the user changed that scroll position externally. CSS scroll-behavior:smooth may conflict with a JavaScript scroll tween, so use one owner for the motion.
 
-``js
+```js
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -35,7 +35,7 @@ button?.addEventListener("click", () => {
     }
   });
 });
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
