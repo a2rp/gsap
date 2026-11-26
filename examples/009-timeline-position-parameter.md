@@ -8,19 +8,19 @@ Arrange three colored bars with absolute, previous-child, and relative-end posit
 
 Use Node.js, npm, and the project created in Chapter 002. If you need a fresh project, run:
 
-``bash
+```bash
 npm create vite@latest gsap-demo -- --template vanilla
 cd gsap-demo
 npm install
 npm install gsap
 npm run dev
-``
+```
 
 Keep the development server running. Put the markup in index.html, the styles in src/style.css, and the JavaScript in src/main.js. This example uses the local development server because the GSAP package is imported as an ES module.
 
 ## Markup: index.html
 
-``html
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,11 +39,11 @@ Keep the development server running. Put the markup in index.html, the styles in
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-``
+```
 
 ## Styles: src/style.css
 
-``css
+```css
 :root { font-family: system-ui, sans-serif; color: #172033; background: #eef2f8; }
 body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
 .demo { width: min(42rem, calc(100% - 2rem)); padding: 2rem; background: white; border-radius: 1rem; }
@@ -51,11 +51,11 @@ body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
 .bar { display: block; width: 6rem; height: 2.8rem; padding: .5rem; color: white; border-radius: .5rem; }
 .one { background: #635bdb; } .two { background: #139b7a; } .three { background: #d06a2d; }
 button { padding: .6rem 1rem; cursor: pointer; }
-``
+```
 
 ## Animation: src/main.js
 
-``js
+```js
 import "./style.css";
 import { gsap } from "gsap";
 
@@ -66,7 +66,7 @@ tl.to(".one", { x: 260, duration: 1, ease: "none" }, 0)
   .to(".three", { x: 260, duration: 0.5, ease: "none" }, "-=0.2");
 
 document.querySelector("#play").addEventListener("click", () => tl.restart());
-``
+```
 
 ## Expected result
 
