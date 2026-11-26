@@ -68,13 +68,13 @@ if (root && panel && replay) {
       reduceMotion: "(prefers-reduced-motion: reduce)",
       fullMotion: "(prefers-reduced-motion: no-preference)"
     },
-    ({ conditions }) => {
+    ({ conditions, context }) => {
       gsap.set(panel, { autoAlpha: 1, x: 0 });
       if (conditions.fullMotion) {
         gsap.from(panel, { autoAlpha: 0, x: 20, duration: 0.4, ease: "power2.out" });
       }
 
-      const replayEntrance = () => {
+      context.add("replayEntrance", () => {
         gsap.killTweensOf(panel);
         if (reduceMotion.matches) {
           gsap.set(panel, { autoAlpha: 1, x: 0 });
@@ -84,10 +84,10 @@ if (root && panel && replay) {
           { autoAlpha: 0, x: 20 },
           { autoAlpha: 1, x: 0, duration: 0.4, ease: "power2.out" }
         );
-      };
-
-      replay.addEventListener("click", replayEntrance);
-      return () => replay.removeEventListener("click", replayEntrance);
+      });
+      const onReplay = context.replayEntrance;
+      replay.addEventListener("click", onReplay);
+      return () => replay.removeEventListener("click", onReplay);
     }
   );
 
