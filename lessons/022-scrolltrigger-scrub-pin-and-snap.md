@@ -13,7 +13,7 @@
 
 With `scrub: true`, the animation playhead follows the scrollbar directly. A numeric scrub adds catch-up smoothing in seconds. Pinning temporarily holds an element and normally adds spacing so later content does not collapse under it. Snap can target increments, arrays, functions, or timeline labels. When snapping to labels, the timeline needs meaningful labels.
 
-``js
+```js
 const story = gsap.timeline({
   scrollTrigger: {
     trigger: ".story",
@@ -31,7 +31,7 @@ story.addLabel("start")
   .addLabel("middle")
   .to(".story__card", { rotation: 180, duration: 1 })
   .addLabel("end");
-``
+```
 
 Read the code from the target outward: identify the animated value, then the GSAP configuration that controls its start, destination, timing, or lifecycle. In DOM examples, make sure the selected elements exist before this module runs. In object examples, update the visible interface from the changing object value yourself.
 
